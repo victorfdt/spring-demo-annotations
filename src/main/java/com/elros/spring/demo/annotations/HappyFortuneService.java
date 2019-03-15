@@ -5,13 +5,17 @@
  */
 package com.elros.spring.demo.annotations;
 
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author victorfdt
  */
-public interface Coach {
-    
-    public String getDailyWorkout();
-    public String getDailyFortune();
-    
+@Component
+public class HappyFortuneService implements FortuneService {
+
+    @Override
+    public String getFortune() {
+        return "Today is your luck day!";
+    }
 }

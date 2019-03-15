@@ -9,9 +9,7 @@ package com.elros.spring.demo.annotations;
  *
  * @author victorfdt
  */
-public interface Coach {
+public interface FortuneService {
     
-    public String getDailyWorkout();
-    public String getDailyFortune();
-    
+    public String getFortune(); 
 }
