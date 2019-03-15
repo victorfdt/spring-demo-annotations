@@ -18,7 +18,7 @@ public class TennisCoach implements Coach {
     private FortuneService fortuneService;
     
     @Autowired
-    public void setFortuneService(FortuneService service){
+    public void doSomeCrazyStuff(FortuneService service){
         fortuneService = service;
     }
 
