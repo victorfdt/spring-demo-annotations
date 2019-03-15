@@ -16,9 +16,9 @@ import org.springframework.stereotype.Component;
 public class TennisCoach implements Coach {
 
     private FortuneService fortuneService;
-
+    
     @Autowired
-    public TennisCoach(FortuneService service) {
+    public void setFortuneService(FortuneService service){
         fortuneService = service;
     }
 
