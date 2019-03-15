@@ -15,27 +15,24 @@ import org.springframework.stereotype.Component;
 @Component
 public class TennisCoach implements Coach {
 
-    private FortuneService fortuneService;
-    
-    @Autowired
-    public void doSomeCrazyStuff(FortuneService service){
-        fortuneService = service;
-    }
+	@Autowired
+	private FortuneService fortuneService;
 
-    @Override
-    public String getDailyWorkout() {
-        return "Practice your backand volley";
-    }
-    
-    /**
-     * The return implementation will be HappyFortuneService,
-     * because this is the only implementation of the interface
-     * FortuneService in the container/object factory.
-     * @return 
-     */
-    @Override
-    public String getDailyFortune() {
-        return fortuneService.getFortune();
-    }
+	@Override
+	public String getDailyWorkout() {
+		return "Practice your backand volley";
+	}
+
+	/**
+	 * The return implementation will be HappyFortuneService, because this is the
+	 * only implementation of the interface FortuneService in the container/object
+	 * factory.
+	 * 
+	 * @return
+	 */
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
 
 }
