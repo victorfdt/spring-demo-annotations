@@ -13,20 +13,25 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
  */
 public class SwimJavaConfigDemoApp {
 
-    public static void main(String args[]) {
+	public static void main(String args[]) {
 
-        // read Spring Java configuration class
-        AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
+		// read Spring Java configuration class
+		AnnotationConfigApplicationContext context = new AnnotationConfigApplicationContext(SportConfig.class);
 
-        // get the bean from the container
-        Coach swimCoach = context.getBean("swimCoach", Coach.class);
+		// get the bean from the container
+		SwimCoach swimCoach = context.getBean("swimCoach", SwimCoach.class);
 
-        // using bean methods
-        System.out.println(swimCoach.getDailyWorkout());
-        System.out.println(swimCoach.getDailyFortune());
+		// using bean methods
+		System.out.println(swimCoach.getDailyWorkout());
+		System.out.println(swimCoach.getDailyFortune());
 
-        // close the context
-        context.close();
-    }
+		// call new swim coach methods. Those variables are receiving value injection
+		// from a property file
+		System.out.println(swimCoach.getEmail());
+		System.out.println(swimCoach.getTeam());
+
+		// close the context
+		context.close();
+	}
 
 }

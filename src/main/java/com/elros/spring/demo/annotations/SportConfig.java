@@ -1,14 +1,16 @@
 package com.elros.spring.demo.annotations;
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 /**
  *
  * @author victorfdt
  */
 @Configuration
+@PropertySource("classpath:sport.properties")
+//@ComponentScan("com.elros.spring.demo.annotations")
 public class SportConfig {
 
 	// define a bean for SadFortuneService

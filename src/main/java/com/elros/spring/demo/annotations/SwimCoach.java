@@ -5,9 +5,7 @@
  */
 package com.elros.spring.demo.annotations;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.stereotype.Component;
+import org.springframework.beans.factory.annotation.Value;
 
 /**
  *
@@ -16,25 +14,49 @@ import org.springframework.stereotype.Component;
 //@Component - It is not necessary. The bean is being declared by JavaCode SportConfig 
 public class SwimCoach implements Coach {
 
-	
-    private FortuneService fortuneService;
+	//Value injection from property file
+	@Value("${foo.email}")
+	private String email;
 
-    /**
-     * Constructor using constructor injection
-     * @param service 
-     */
-    public SwimCoach(FortuneService service) {
-        fortuneService = service;
-    }
+	//Value injection from property file
+	@Value("${foo.team}")
+	private String team;
 
-    @Override
-    public String getDailyWorkout() {
-        return "You need to swim two pools.";
-    }
+	private FortuneService fortuneService;
 
-    @Override
-    public String getDailyFortune() {
-        return fortuneService.getFortune();
-    }
+	/**
+	 * Constructor using constructor injection
+	 * 
+	 * @param service
+	 */
+	public SwimCoach(FortuneService service) {
+		fortuneService = service;
+	}
+
+	@Override
+	public String getDailyWorkout() {
+		return "You need to swim two pools.";
+	}
+
+	@Override
+	public String getDailyFortune() {
+		return fortuneService.getFortune();
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getTeam() {
+		return team;
+	}
+
+	public void setTeam(String team) {
+		this.team = team;
+	}
 
 }
