@@ -5,12 +5,18 @@
  */
 package com.elros.spring.demo.annotations;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author victorfdt
  */
+//@Component - It is not necessary. The bean is being declared by JavaCode SportConfig 
 public class SwimCoach implements Coach {
 
+	
     private FortuneService fortuneService;
 
     /**

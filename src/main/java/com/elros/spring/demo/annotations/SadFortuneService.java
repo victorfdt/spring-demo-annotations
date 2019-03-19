@@ -5,14 +5,17 @@
  */
 package com.elros.spring.demo.annotations;
 
+import org.springframework.stereotype.Component;
+
 /**
  *
  * @author victorfdt
  */
-public class SadFortuneService implements FortuneService{
+//@Component - It is not necessary. The bean is being declared by JavaCode SportConfig 
+public class SadFortuneService implements FortuneService {
 
-    @Override
-    public String getFortune() {
-        return "Today will be a sad day :(";
-    }
+	@Override
+	public String getFortune() {
+		return "Today will be a sad day :(";
+	}
 }
